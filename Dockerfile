@@ -7,6 +7,8 @@ RUN npm run dist
 
 FROM httpd:alpine3.15
 
+COPY --from=builder /usr/local/apache2/htdocs/dist /usr/local/apache2/htdocs/dist
+
 COPY . /usr/local/apache2/htdocs/
 
 ARG WEBSOCKET_ADDRESS=hellohello
