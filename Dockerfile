@@ -8,3 +8,5 @@ RUN npm run dist
 FROM httpd:alpine3.15
 
 COPY . /usr/local/apache2/htdocs/
+
+EXPOSE 8080
