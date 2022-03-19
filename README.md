@@ -16,8 +16,7 @@ WEBSOCKET_ADDRESS.
 ```
 
 # Start websocket server
-```
 
-```
+See https://github.com/chrisjsimpson/collaborate-editor-yjs-connection-providor-y-websocket
 
 Visit http://127.0.0.1:8080
