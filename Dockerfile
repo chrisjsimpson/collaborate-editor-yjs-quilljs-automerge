@@ -15,4 +15,4 @@ ENV WEBSOCKET_ADDRESS=${WEBSOCKET_ADDRESS}
 
 RUN sed -i.bak "s/ws:\/\/127.0.0.1:1234/$WEBSOCKET_ADDRESS/g" /usr/local/apache2/htdocs/quill.js
 
-EXPOSE 8080
+EXPOSE 80
