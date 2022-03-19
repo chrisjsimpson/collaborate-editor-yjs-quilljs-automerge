@@ -1,3 +1,5 @@
 #!/bin/bash
 
-podman build -t docs .
+WEBSOCKET_ADDRESS=$1
+
+podman build --build-arg WEBSOCKET_ADDRESS=$1 -t docs .
