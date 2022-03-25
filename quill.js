@@ -1,5 +1,4 @@
 /* eslint-env browser */
-
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { QuillBinding } from 'y-quill'
@@ -9,6 +8,15 @@ import QuillCursors from 'quill-cursors'
 Quill.register('modules/cursors', QuillCursors)
 
 window.addEventListener('load', () => {
+  // If ?doc name is set, then try and open that.
+  // e.g. example.com?doc=chapter-one
+  let searchParams = new URLSearchParams(document.location.search)
+
+  if (searchParams.get("doc")) {
+    var documentName = searchParams.get("doc");
+    localStorage.setItem('document-name', documentName);
+  }
+
   if (localStorage.getItem("document-name") === null) {
     var documentName = 'quill-demo-1';
   } else {
