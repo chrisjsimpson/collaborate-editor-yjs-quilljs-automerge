@@ -22,6 +22,9 @@ window.addEventListener('load', () => {
   } else {
     var documentName = localStorage.getItem("document-name");
   }
+  // Set browser tab title
+  document.title = documentName;
+
   const ydoc = new Y.Doc()
   const provider = new WebsocketProvider('ws://127.0.0.1:1234', documentName, ydoc)
   const ytext = ydoc.getText('quill')
