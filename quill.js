@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
 
   function openDocument() {
     documentNameSpanElm.textContent = documentName;
-    const newFileName = document.getElementById('newFileName').value;
+    const newFileName = document.getElementById('newFileName').value.toLocaleLowerCase();
 
     if (newFileName.trim() != "") {
       localStorage.setItem('document-name', newFileName);
