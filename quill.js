@@ -38,15 +38,15 @@ window.addEventListener('load', () => {
       cursors: true,
       toolbar: [
         [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline', 'link'],
-        ['image', 'code-block']
+        ['bold', 'italic', 'underline', 'link', 'list'],
+        ['image', 'code-block', 'video']
       ],
       history: {
         userOnly: true
       }
     },
     placeholder: 'Start collaborating...',
-    theme: 'snow' // or 'bubble'
+    theme: 'bubble' // or 'snow'
   })
 
   const binding = new QuillBinding(ytext, editor, provider.awareness)
