@@ -43,7 +43,7 @@ jobs:
           ssh dokku@$DOKKU_HOST -C "dokku apps:create ${{ secrets.DOKKU_APP_NAME }}" | true
           echo The url is set by $HOSTNAME in secrets
           ssh dokku@$DOKKU_HOST -C "dokku git:initialize ${{ secrets.DOKKU_APP_NAME }}"
-          ssh dokku@$DOKKU_HOST -C "dokku ps:set-restart-policy app unless-stopped"
+          ssh dokku@$DOKKU_HOST -C "dokku ps:set ${{ secrets.DOKKU_APP_NAME }} restart-policy unless-stopped"
           ssh dokku@$DOKKU_HOST -C "dokku ps:rebuild ${{ secrets.DOKKU_APP_NAME }}"
 
       - id: deploy
