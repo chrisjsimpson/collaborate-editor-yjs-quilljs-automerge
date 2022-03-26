@@ -86,6 +86,7 @@ window.addEventListener('load', () => {
       // Reload with difference filename which may or may not already exist, and that's OK
       // If it already exists, then the previous document will load (if connected to the
       // internet) otherwise, a blank document will show.
+      window.history.replaceState(null, null, "?doc=" + newFileName);
       document.location.reload();
     }
   }
