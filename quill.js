@@ -8,6 +8,7 @@ import QuillCursors from 'quill-cursors'
 Quill.register('modules/cursors', QuillCursors)
 
 window.addEventListener('load', () => {
+
   // If ?doc name is set, then try and open that.
   // e.g. example.com?doc=chapter-one
   let searchParams = new URLSearchParams(document.location.search)
@@ -76,8 +77,8 @@ window.addEventListener('load', () => {
   const documentNameSpanElm = document.getElementById('documentName');
   documentNameSpanElm.textContent = documentName;
 
-  // Create new document
-  const newDocumentElm = document.getElementById('newDocument').addEventListener('click', () => {
+  function openDocument() {
+    documentNameSpanElm.textContent = documentName;
     const newFileName = document.getElementById('newFileName').value;
 
     if (newFileName.trim() != "") {
@@ -87,5 +88,14 @@ window.addEventListener('load', () => {
       // internet) otherwise, a blank document will show.
       document.location.reload();
     }
+  }
+
+  // Create new document
+  const newDocumentElm = document.getElementById('newDocument').addEventListener('click', () => {
+    openDocument();
   })
+  const newDocumentFormElm = document.getElementById("newDocumentForm").addEventListener('submit', (e) => {
+    e.preventDefault();
+    openDocument();
+  });
 })
