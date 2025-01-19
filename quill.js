@@ -4,8 +4,10 @@ import { WebsocketProvider } from 'y-websocket'
 import { QuillBinding } from 'y-quill'
 import Quill from 'quill'
 import QuillCursors from 'quill-cursors'
+import QuillMarkdown from 'quilljs-markdown'
 
 Quill.register('modules/cursors', QuillCursors)
+Quill.register('modules/QuillMarkdown', QuillMarkdown, true)
 
 window.addEventListener('load', () => {
 
@@ -36,6 +38,7 @@ window.addEventListener('load', () => {
   const editor = new Quill(editorContainer, {
     modules: {
       cursors: true,
+      QuillMarkdown: {},
       toolbar: [
         [{ header: [1, 2, false] }],
         ['bold', 'italic', 'underline', 'link', 'list'],
